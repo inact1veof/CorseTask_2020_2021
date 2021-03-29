@@ -40,14 +40,26 @@
                     <asp:TextBox ID ="TextBox3" runat ="server" Width ="150" TextMode ="Time"></asp:TextBox><br /><br />
                     <asp:Button ID="Button6" runat="server" Text="Создать прогноз" Width ="250" OnClick ="Button6_Click"/><br /><br />
                     <asp:Label ID="Label5" runat="server" Text="Ответ сокета" Visible ="false"></asp:Label><br /><br />
+                    <asp:Button ID="Button8" runat="server" Text="Просмотр графика" Width ="250" OnClick ="Button8_Click"/><br /><br />
                 </asp:TableCell>
                 <asp:TableCell style ="vertical-align:top">
-                    <asp:Label ID="Label1" runat="server" Text="Управление планом" Visible ="true"></asp:Label><br /><br />  
-                    <asp:Label ID="Label7" runat="server" Text="Дата: " Visible ="true"></asp:Label> 
-                    <asp:Label ID="Label6" runat="server" Text="" Visible ="true"></asp:Label> <br /><br />  
-                    <asp:Label ID="Label8" runat="server" Text="Значение: " Visible ="true"></asp:Label>
-                    <asp:Label ID="Label9" runat="server" Text="" Visible ="true"></asp:Label> <br /><br /> 
-                    <asp:Button ID="Button7" runat="server" Text="Редактировать план" Width ="250" OnClick ="Button6_Click"/><br /><br />
+                    <asp:Label ID="Label1" runat="server" Text="Управление планом" Visible ="true"></asp:Label><br /><br /> 
+                    <asp:Button ID="Button12" runat="server" Text="Свернуть/Развернуть план" Width ="250" OnClick ="Button12_Click"/><br /><br />
+                    <asp:GridView ID="GridView2" runat="server" style ="margin-left: 20px; text-align:center; width:20%" Font-Size ="16"> 
+                        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                    </asp:GridView>
+                    <asp:Button ID="Button9" runat="server" Text="Загрузить план" Width ="250" OnClick ="Button9_Click"/><br /><br />
+                    <asp:Button ID="Button7" runat="server" Text="Добавить план" Width ="250" OnClick ="Button7_Click"/><br /><br />
+                    <asp:Button ID="Button13" runat="server" Text="Удалить план" Width ="250" OnClick ="Button13_Click"/><br /><br />
+                    <asp:Button ID="Button14" runat="server" Text="Изменить план" Width ="250" OnClick ="Button14_Click"/><br /><br />
+                    <asp:Label ID="Label10" runat="server" Text="Номер прибора учета: " Visible ="false"></asp:Label>
+                    <asp:TextBox ID="TextBox4" runat="server" Width ="60" Visible ="false"></asp:TextBox> <br /><br />
+                    <asp:Label ID="Label6" runat="server" Text="Алгоритм прогноза: " Visible ="false"></asp:Label>
+                    <asp:DropDownList ID="DropDownList1" runat="server" Visible ="false"></asp:DropDownList><br /><br />
+                    <asp:Label ID="Label7" runat="server" Text="Дата: " Visible ="false"></asp:Label>
+                    <asp:TextBox ID="TextBox5" runat="server" Width ="150" Visible ="false" TextMode ="Date"></asp:TextBox> <br /><br />
+                    <asp:Button ID="Button10" runat="server" Text="Отмена" Width ="100" Visible ="false" OnClick ="Button10_Click"/>
+                    <asp:Button ID="Button11" runat="server" Text="Принять" Width ="100" Visible ="false" OnClick ="Button11_Click"/>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

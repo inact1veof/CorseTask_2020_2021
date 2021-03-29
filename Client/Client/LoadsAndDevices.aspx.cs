@@ -118,6 +118,13 @@ namespace Client
             sqlCon.Close();
             GridView2.DataSource = set.Tables[0];
             GridView2.DataBind();
+            set = new DataSet();
+            cmd = new SqlCommand($"SELECT Metering_Devices.Id, Metering_Devices.Name, Count(Real_Values.Value) AS [Количество показаний] FROM Metering_Devices INNER JOIN Real_Values ON Metering_Devices.Id = Real_Values.Device_Id GROUP BY Metering_Devices.Id, Metering_Devices.Name", sqlCon);
+            adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(set, "Metering_Devices");
+            sqlCon.Close();
+            GridView3.DataSource = set.Tables[0];
+            GridView3.DataBind();
         }
 
         //добавление нагрузки
@@ -343,6 +350,11 @@ namespace Client
         protected void Button4_Click1(object sender, EventArgs e)
         {
             Response.Redirect("ForecastPage.aspx");
+        }
+        
+        protected void MakeCountList()
+        {
+
         }
     }
 }

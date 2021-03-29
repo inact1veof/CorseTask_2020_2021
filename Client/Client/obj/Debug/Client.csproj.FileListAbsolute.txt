@@ -57,4 +57,7 @@ C:\Users\inact1ve\Desktop\Test\Client\Client\obj\Debug\Client.csproj.CopyComplet
 C:\Users\inact1ve\Desktop\Test\Client\Client\obj\Debug\Client.dll
 C:\Users\inact1ve\Desktop\Test\Client\Client\obj\Debug\Client.pdb
 C:\Users\inact1ve\Desktop\Test\Client\Client\obj\Debug\Client.csproj.ResolveComReference.cache
-C:\Users\inact1ve\Desktop\Test\Client\Client\obj\Debug\Client.csprojAssemblyReference.cache
+C:\Users\inact1ve\Desktop\Test\Client\Client\bin\Grafana.Api.Client.dll
+C:\Users\inact1ve\Desktop\Test\Client\Client\bin\Grafana.Shared.dll
+C:\Users\inact1ve\Desktop\Test\Client\Client\bin\Newtonsoft.Json.dll
+C:\Users\inact1ve\Desktop\Test\Client\Client\bin\Newtonsoft.Json.xml

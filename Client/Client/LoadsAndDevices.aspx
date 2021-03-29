@@ -33,6 +33,10 @@
                         <asp:GridView ID="GridView2" runat="server" style ="margin-left: 20px; text-align:center; width:50%" Font-Size ="16"> 
                             <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
                         </asp:GridView>
+                        <h1 style ="margin-left: 20px">Данные приборов учета</h1>
+                        <asp:GridView ID="GridView3" runat="server" style ="margin-left: 20px; text-align:center; width:50%" Font-Size ="16"> 
+                            <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                        </asp:GridView>
                     </asp:TableCell>
                     <asp:TableCell style ="vertical-align:top; text-align:center">
                         <h1 style ="margin-left: 20px">Добавить данные</h1>

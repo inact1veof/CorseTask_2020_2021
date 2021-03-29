@@ -1,0 +1,543 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "panels": [
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "graph": false,
+              "legend": false,
+              "tooltip": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 20,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "graph": {},
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltipOptions": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "7.5.1",
+      "targets": [
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT $__timeEpoch(Date),Value, Algoritm_Names.Name as metric FROM Algoritm_Names INNER JOIN Rmse_Values ON Algoritm_Names.Id = Rmse_Values.AlgId WHERE Rmse_Values.Device_Id = 1 AND Rmse_Values.AlgId = 1",
+          "refId": "A"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT $__timeEpoch(Date),Value, Algoritm_Names.Name as metric FROM Algoritm_Names INNER JOIN Rmse_Values ON Algoritm_Names.Id = Rmse_Values.AlgId WHERE Rmse_Values.Device_Id = 1 AND Rmse_Values.AlgId = 2",
+          "refId": "B"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT $__timeEpoch(Date),Value, Algoritm_Names.Name as metric FROM Algoritm_Names INNER JOIN Rmse_Values ON Algoritm_Names.Id = Rmse_Values.AlgId WHERE Rmse_Values.Device_Id = 1 AND Rmse_Values.AlgId = 3",
+          "refId": "C"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT $__timeEpoch(Date),Value, Algoritm_Names.Name as metric FROM Algoritm_Names INNER JOIN Rmse_Values ON Algoritm_Names.Id = Rmse_Values.AlgId WHERE Rmse_Values.Device_Id = 1 AND Rmse_Values.AlgId = 4",
+          "refId": "D"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT $__timeEpoch(Date),Value, Algoritm_Names.Name as metric FROM Algoritm_Names INNER JOIN Rmse_Values ON Algoritm_Names.Id = Rmse_Values.AlgId WHERE Rmse_Values.Device_Id = 1 AND Rmse_Values.AlgId = 5",
+          "refId": "E"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "RMSE",
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.1",
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT AVG(Value) FROM Rmse_Values WHERE Rmse_Values.Device_Id = 1 AND Rmse_Values.AlgId = 1",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "AVG RMSE Alg1",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 4
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.1",
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT AVG(Value) FROM Rmse_Values WHERE Rmse_Values.Device_Id = 1 AND Rmse_Values.AlgId = 2",
+          "refId": "A"
+        }
+      ],
+      "title": "AVG RMSE Alg2",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 8
+      },
+      "id": 10,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.1",
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT AVG(Value) FROM Rmse_Values WHERE Rmse_Values.Device_Id = 1 AND Rmse_Values.AlgId = 3",
+          "refId": "A"
+        }
+      ],
+      "title": "AVG RMSE Alg3",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "graph": false,
+              "legend": false,
+              "tooltip": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 20,
+        "x": 0,
+        "y": 10
+      },
+      "id": 2,
+      "options": {
+        "graph": {},
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltipOptions": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "7.5.1",
+      "targets": [
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT $__timeEpoch(DateTime),Value, Algoritm_Names.Name as metric FROM Algoritm_Names INNER JOIN Algoritm_Results ON Algoritm_Names.Id = Algoritm_Results.Algoritm_Id WHERE Algoritm_Results.Device_Id = 1 AND Algoritm_Results.Algoritm_Id = 1\n",
+          "refId": "A"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT $__timeEpoch(DateTime),Value, Algoritm_Names.Name as metric FROM Algoritm_Names INNER JOIN Algoritm_Results ON Algoritm_Names.Id = Algoritm_Results.Algoritm_Id WHERE Algoritm_Results.Device_Id = 1 AND Algoritm_Results.Algoritm_Id = 2",
+          "refId": "B"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT $__timeEpoch(DateTime),Value, Algoritm_Names.Name as metric FROM Algoritm_Names INNER JOIN Algoritm_Results ON Algoritm_Names.Id = Algoritm_Results.Algoritm_Id WHERE Algoritm_Results.Device_Id = 1 AND Algoritm_Results.Algoritm_Id = 3",
+          "refId": "C"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT $__timeEpoch(DateTime),Value, Algoritm_Names.Name as metric FROM Algoritm_Names INNER JOIN Algoritm_Results ON Algoritm_Names.Id = Algoritm_Results.Algoritm_Id WHERE Algoritm_Results.Device_Id = 1 AND Algoritm_Results.Algoritm_Id = 4",
+          "refId": "D"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "hide": false,
+          "rawSql": "SELECT $__timeEpoch(DateTime),Value, Algoritm_Names.Name as metric FROM Algoritm_Names INNER JOIN Algoritm_Results ON Algoritm_Names.Id = Algoritm_Results.Algoritm_Id WHERE Algoritm_Results.Device_Id = 1 AND Algoritm_Results.Algoritm_Id = 5",
+          "refId": "E"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Values",
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 12
+      },
+      "id": 12,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.1",
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT AVG(Value) FROM Rmse_Values WHERE Rmse_Values.Device_Id = 1 AND Rmse_Values.AlgId = 4",
+          "refId": "A"
+        }
+      ],
+      "title": "AVG RMSE Alg4",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 20,
+        "y": 16
+      },
+      "id": 14,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.1",
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT AVG(Value) FROM Rmse_Values WHERE Rmse_Values.Device_Id = 1 AND Rmse_Values.AlgId = 5",
+          "refId": "A"
+        }
+      ],
+      "title": "AVG RMSE Alg5",
+      "type": "stat"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 27,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2017-01-01T02:00:00.000Z",
+    "to": "2017-01-31T23:03:39.000Z"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Data",
+  "uid": "keZhp9wMk",
+  "version": 7
+}
